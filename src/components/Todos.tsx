@@ -1,10 +1,14 @@
 import React from 'react'
 
+import Todo from './Models/todo';
+import TodoItem from './TodoItem';
 
-const Todos: React.FC<{ items: string[] }> = (props) => {
+// we can use class as an type in components
+
+const Todos: React.FC<{ items: Todo[] }> = (props) => {
     return (
         <ul>
-            {props.items.map(item => <li key={item}>{item}</li>)}
+            {props.items.map(item => <TodoItem key={item.id} text={item.text} />)}
         </ul>
 
     )
